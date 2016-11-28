@@ -28,6 +28,8 @@ int main()
 
 		std::cin >> userSelection;
 
+		std::cout << '\n';
+
 		double temperature = 0.0;
 		double k = 0.0;
 		double c = 0.0;
@@ -40,18 +42,18 @@ int main()
 			k = ctok(temperature);
 			std::cout << k << " Kelvin\n\n";
 			break;
+
 		case 2:
 			std::cout << "Enter temperature in kelvin: ";
 			std::cin >> temperature;
-			c = ktoc(c);
+			c = ktoc(temperature);
 			std::cout << c << " Celsius\n\n";
 			break;
+
 		default:
 			error("Invalid selection!");
 			break;
 		}
-		
-
 		
 		keep_window_open();
 	}
@@ -72,7 +74,7 @@ int main()
 
 double ctok(double c) // converts Celsius to Kelvin
 {
-	if (c < absoluteZero) error("Cannot convert a value below absolute zero!");
+	if (c < absoluteZero) error("\nCannot convert a value below absolute zero!\n");
 
 	double k = c + 273.15;
 	return k;
@@ -80,7 +82,7 @@ double ctok(double c) // converts Celsius to Kelvin
 
 double ktoc(double k)
 {
-	if (k < 0) error("Cannot have a temperature in Kelvin below absolute zero!");
+	if (k < 0.0) error("\nCannot have a temperature in Kelvin below absolute zero!\n");
 
 	double c = k - 273.15;
 	return c;
