@@ -38,7 +38,7 @@ int main()
 		{
 			quadtratic();
 
-			std::cout << "Another conversion (y/n)? ";
+			std::cout << "Another equation? (y/n)? ";
 			std::cin >> loopAgain;
 
 			std::cout << "\n\n";
