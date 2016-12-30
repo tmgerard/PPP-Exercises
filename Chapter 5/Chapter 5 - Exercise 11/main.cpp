@@ -26,6 +26,9 @@ int main()
 		int numberOfValues = 0;
 		std::cin >> numberOfValues;
 
+		if (numberOfValues < 1)
+			error("Enter a positive number larger than zero!");
+
 		vector<int> fibValues;
 		Fibonacci(numberOfValues, fibValues);
 
